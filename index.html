@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>contador de tempo que estou junto do amor da minha vida ❤💍</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #ffe6f0; color: #333; text-align: center; padding: 50px; }
+    h1 { color: #cc0066; }
+    .contador { font-size: 24px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>contador de tempo que estou junto do amor da minha vida ❤💍</h1>
+  <div class="contador" id="contador"></div>
+  <script>
+    const inicio = new Date("2024-09-07T19:00:00");
+    function atualizar() {
+      const agora = new Date();
+      const diff = agora - inicio;
+      const seg = Math.floor(diff/1000) % 60;
+      const min = Math.floor(diff/60000) % 60;
+      const hrs = Math.floor(diff/3600000) % 24;
+      const dias = Math.floor(diff/86400000);
+      const anos = Math.floor(dias/365);
+      const meses = Math.floor((dias % 365) / 30);
+      const diasR = dias - (anos * 365 + meses * 30);
+      document.getElementById("contador").innerText =
+        `${anos} anos, ${meses} meses, ${diasR} dias, ` +
+        ${hrs} horas, ${min} minutos e ${seg} segundos;
+      setTimeout(atualizar, 1000);
+    }
+    atualizar();
+  </script>
+</body>
+</html>
